@@ -35,7 +35,7 @@ export const WebsocketEventForm = () => {
                 
                     <Grid item xs={12}>
                     <Field 
-                    fullWidth
+                        fullWidth
                         required 
                         name="message" 
                         component={TextField} 

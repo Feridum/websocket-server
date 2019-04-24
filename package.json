@@ -26,10 +26,14 @@
   "scripts": {
     "react": "react-scripts start",
     "build:react": "react-scripts build",
-    "build:electron": "electron-builder",
+    "build:electron:win:x86": "electron-builder -w --ia32",
+    "build:electron:win:x64": "electron-builder -w --x64",
+    "build:electron:win": "yarn build:electron:win:x86 && yarn build:electron:win:x64",
+    "build:electron:all": "electron-builder -wm",
+    "build:all": "yarn build:react && yarn build:electron:all",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron . --out=dist",
+    "electron": "electron .",
     "postinstall": "electron-builder install-app-deps"
   },
   "eslintConfig": {
@@ -46,11 +50,24 @@
     "electron-builder": "^20.39.0"
   },
   "build": {
+    "productName": "WebsocketServer",
     "extends": null,
     "files": [
       "build/**/*",
       "electron/**/*",
       "package.json"
-    ]
+    ],
+    "directories": {
+      "output": "dist/${productName}-${platform}-${arch}"
+    },
+    "portable": {
+      "artifactName": "WebsocketServer_${version}.${ext}"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    }
   }
 }

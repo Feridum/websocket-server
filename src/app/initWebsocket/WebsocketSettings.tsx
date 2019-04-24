@@ -1,5 +1,6 @@
 import React from 'react'
 import { WebsocketInitForm } from './websocketInitForm/WebsocketInitForm';
+import { Grid } from '@material-ui/core';
 
 
 export const InitWebsocket = ({history}:any) => {
@@ -9,8 +10,8 @@ export const InitWebsocket = ({history}:any) => {
     }
 
     return (
-        <div>
+        <Grid container direction='row' justify="center" style={{padding: 16, marginTop: '1   0%'}}>
            <WebsocketInitForm redirectOnSuccess={redirectOnSuccess}/>
-        </div>
+        </Grid>
     )
 }
