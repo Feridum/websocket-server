@@ -7,9 +7,8 @@ For now, the only way to use this app is to clone this repo and run the app in d
 ```
 git clone https://github.com/Feridum/websocket-server
 cd <folder name>
-yarn
-yarn react
-yarn electron
+yarn install
+yarn all
 ```
 
 Soon, will be added a single command to run both commands
@@ -23,4 +22,4 @@ Soon, will be added a single command to run both commands
 - [ ] Change Electron code to Typescript
 - [ ] Write tests
 - [ ] Add executables for all operating systems
-- [ ] Improve starting the app in development mode
+- [x] Improve starting the app in development mode
